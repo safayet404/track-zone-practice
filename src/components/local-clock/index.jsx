@@ -1,19 +1,15 @@
 import useClock from "../../hooks/useClock"
+import ClockDisplay from "../shared"
 
-const LocalClock = () => {
+const LocalClock = ({date,timezone,offset}) => {
 
-    const {clock : utc} = useClock('UTC')
-    const {clock : est} = useClock('EST')
-    const {clock : cet} = useClock('CET')
-    const {clock : pst} = useClock('PST')
-
-    console.log('UTC clock', utc.date)
-    console.log('EST clock', est.date)
-    console.log('PST clock', pst.date)
-    console.log('ETD clock', cet.date)
+   
 
     return (
-        <h1>This is local clock</h1>
+        <div>
+            <h1>This is local clock</h1>
+            <ClockDisplay date={date} title={'This title generating from Local Clock Component'} />
+        </div>
     )
 }
 
